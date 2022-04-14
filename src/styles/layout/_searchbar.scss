@@ -1,0 +1,35 @@
+.search {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  &__input {
+    width: 100%;
+    height: 100%;
+    padding: 0.8rem 1rem;
+    border: none;
+    outline: none;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+  &__icon {
+    height: 103%;
+    width: 3rem;
+    place-items: center;
+    margin-left: -3rem;
+    display: grid;
+    place-items: center;
+    background-image: linear-gradient(
+      45deg,
+      rgb(153, 51, 255) 0%,
+      rgb(255, 102, 102) 100%
+    );
+
+    & img {
+    }
+  }
+}

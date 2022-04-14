@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "InterFace";
+  src: url("../../assets/fonts/InterFace-Bold.eot");
+  src: local("InterFace Bold"), local("InterFace-Bold"),
+    url("../../assets/fonts/InterFace-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/InterFace-Bold.woff2") format("woff2"),
+    url("../../assets/fonts/InterFace-Bold.woff") format("woff"),
+    url("../../assets/fonts/InterFace-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InterFace";
+  src: url("../../assets/fonts/InterFace-ThinItalic.eot");
+  src: local("InterFace Thin Italic"), local("InterFace-ThinItalic"),
+    url("../../assets/fonts/InterFace-ThinItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/InterFace-ThinItalic.woff2") format("woff2"),
+    url("../../assets/fonts/InterFace-ThinItalic.woff") format("woff"),
+    url("../../assets/fonts/InterFace-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "InterFace";
+  src: url("../../assets/fonts/InterFace-Light.eot");
+  src: local("InterFace Light"), local("InterFace-Light"),
+    url("../../assets/fonts/InterFace-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/InterFace-Light.woff2") format("woff2"),
+    url("../../assets/fonts/InterFace-Light.woff") format("woff"),
+    url("../../assets/fonts/InterFace-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InterFace XBold";
+  src: url("../../assets/fonts/InterFace-XBoldItalic.eot");
+  src: local("InterFace XBold Italic"), local("InterFace-XBoldItalic"),
+    url("../../assets/fonts/InterFace-XBoldItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/InterFace-XBoldItalic.woff2") format("woff2"),
+    url("../../assets/fonts/InterFace-XBoldItalic.woff") format("woff"),
+    url("../../assets/fonts/InterFace-XBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "InterFace";
+  src: url("../../assets/fonts/InterFace-Black.eot");
+  src: local("InterFace Black"), local("InterFace-Black"),
+    url("../../assets/fonts/InterFace-Black.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/InterFace-Black.woff2") format("woff2"),
+    url("../../assets/fonts/InterFace-Black.woff") format("woff"),
+    url("../../assets/fonts/InterFace-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InterFace";
+  src: url("../../assets/fonts/InterFace-LightItalic.eot");
+  src: local("InterFace Light Italic"), local("InterFace-LightItalic"),
+    url("../../assets/fonts/InterFace-LightItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/InterFace-LightItalic.woff2") format("woff2"),
+    url("../../assets/fonts/InterFace-LightItalic.woff") format("woff"),
+    url("../../assets/fonts/InterFace-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "InterFace";
+  src: url("../../assets/fonts/InterFace-Italic.eot");
+  src: local("InterFace Italic"), local("InterFace-Italic"),
+    url("../../assets/fonts/InterFace-Italic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/InterFace-Italic.woff2") format("woff2"),
+    url("../../assets/fonts/InterFace-Italic.woff") format("woff"),
+    url("../../assets/fonts/InterFace-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "InterFace";
+  src: url("../../assets/fonts/InterFace-BlackItalic.eot");
+  src: local("InterFace Black Italic"), local("InterFace-BlackItalic"),
+    url("../../assets/fonts/InterFace-BlackItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/InterFace-BlackItalic.woff2") format("woff2"),
+    url("../../assets/fonts/InterFace-BlackItalic.woff") format("woff"),
+    url("../../assets/fonts/InterFace-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "InterFace";
+  src: url("../../assets/fonts/InterFace-Regular.eot");
+  src: local("InterFace Regular"), local("InterFace-Regular"),
+    url("../../assets/fonts/InterFace-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/InterFace-Regular.woff2") format("woff2"),
+    url("../../assets/fonts/InterFace-Regular.woff") format("woff"),
+    url("../../assets/fonts/InterFace-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InterFace";
+  src: url("../../assets/fonts/InterFace-Thin.eot");
+  src: local("InterFace Thin"), local("InterFace-Thin"),
+    url("../../assets/fonts/InterFace-Thin.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/InterFace-Thin.woff2") format("woff2"),
+    url("../../assets/fonts/InterFace-Thin.woff") format("woff"),
+    url("../../assets/fonts/InterFace-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InterFace";
+  src: url("../../assets/fonts/InterFace-BoldItalic.eot");
+  src: local("InterFace Bold Italic"), local("InterFace-BoldItalic"),
+    url("../../assets/fonts/InterFace-BoldItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/InterFace-BoldItalic.woff2") format("woff2"),
+    url("../../assets/fonts/InterFace-BoldItalic.woff") format("woff"),
+    url("../../assets/fonts/InterFace-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "InterFace XBold";
+  src: url("../../assets/fonts/InterFace-XBold.eot");
+  src: local("InterFace XBold"), local("InterFace-XBold"),
+    url("../../assets/fonts/InterFace-XBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/InterFace-XBold.woff2") format("woff2"),
+    url("../../assets/fonts/InterFace-XBold.woff") format("woff"),
+    url("../../assets/fonts/InterFace-XBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
