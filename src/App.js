@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./layout/Navbar";
 import { SeachBar } from "./layout/SeachBar";
+import { TrendingGrid } from "./layout/TrendingGrid";
 import "./styles/main.scss";
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
       <Navbar />
       <SeachBar />
       <Routes>
-        <Route path="/" element={<div></div>} />
+        <Route path="/" element={<TrendingGrid />} />
       </Routes>
     </div>
   );
