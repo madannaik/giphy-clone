@@ -1,15 +1,23 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export const SeachBar = () => {
+    let navigate = useNavigate();
     const [input, setInput] = React.useState('');
     const onChange = (e) => {
         setInput(e.target.value);
     }
+    const onClick = () => {
+        if (input !== '') {
+            navigate(`/${input}`)
+        }
+        else navigate('/')
+    }
     return (
         <form className='search'>
             <input onChange={onChange} value={input} placeholder=' ' type="text" className="search__input" />
-            <div className='search__icon'>
-                <img src="https://giphy.com/static/img/search-icon.svg" alt="" srcset="" />
+            <div className='search__icon' onClick={onClick}>
+                <img src="https://giphy.com/static/img/search-icon.svg" alt="" srcSet="" />
             </div>
             <div style={{ display: `${input === '' ? "block" : "none"}` }} className="search__placeholder">
                 <div>

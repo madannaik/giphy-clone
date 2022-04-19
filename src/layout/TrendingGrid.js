@@ -1,64 +1,74 @@
-import React from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useRef, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { GLoader } from '../components/GLoader'
 import { SingleGif } from '../components/SingleGif'
-import useQuery from '../hooks/useQuery'
-import { getRows } from '../utils/getgridRows'
-import { trendingURL } from '../utils/url.js'
+import { useMutation } from '../hooks/useMutation'
+import { useScroll } from '../hooks/useScroll'
+import { getgridDetails } from '../utils/getGridDetails'
+import { searchUrl, trendingURL } from '../utils/url.js'
 
 export const TrendingGrid = () => {
-    const { data, error, isError, loading } = useQuery(trendingURL)
-    const rowWidth = getRows(window.innerWidth);
-    let width;
-    let height = {
-        0: 0,
-        1: 0,
-        2: 0,
-        3: 0,
-    };
-    // console.log(window.innerWidth);
-    React.useEffect(() => {
-        console.log(data);
-    }, [data])
-    return (
-        <section className='trendgrid'>
-            {/* <p >Treanding</p> */}
-            {data && data.data.map((src, index) => {
-                let num = (index % 4)
-                let oldheight;
-                if (num === 0) {
-                    width = 0;
-                }
-                else width += 264
-                console.log(width, index);
-                if (index === 0 || index === 1 || index === 2 || index === 3);
-                else {
-                    oldheight = height[num];
-                    height[num] += parseInt(src.images['480w_still'].height) + 20;
-                }
 
-                return (<SingleGif key={index} src={src} height={oldheight} width={width} index={index} />)
-                // let num = (index % 4)
-                // let oldheight;
-                // if (num === 0) {
-                //     width = 0;
-                // }
-                // else width += 264
-                // console.log(width, index);
-                // if (index === 0 || index === 2 || index === 2 || index === 3);
-                // else {
-                //     oldheight = height[num];
-                //     height[num] += parseInt(src.images['480w_still'].height) + 20;
-                // }
-                // console.log();
-                // const style = {
-                //     width: '248px',
-                //     height: src.images['480w_still'].height + "px",
-                //     transform: `translate3d(${width}px,${oldheight}px,0)`,
-                //     position: "absolute",
-                // }
-                // return <div key={index} style={style}>
-                //     <img width={"100%"} height="100%" src={src.images['original'].url} alt={src.slug} />
-                // </div>
-            })}
+    const { isBottom } = useScroll()
+    const param = useParams()
+    const [divH, setDivH] = useState(0);
+    const ref = useRef({ offset: 0 })
+    const gridRef = {
+        width: 0,
+        height: { 0: 0, 1: 0, 2: 0, 3: 0 }
+    }
+
+    const { data, fetch, loading, refetch } = useMutation()
+
+    React.useEffect(() => {
+        ref.current.offset = 0;
+        if (param.q === undefined) {
+            fetch(trendingURL, { offset: 0 });
+        }
+        else {
+            fetch(searchUrl, { offset: 0, query: param.q })
+        }
+    }, []);
+    React.useEffect(() => {
+        ref.current.offset = 0;
+        if (param.q === undefined) {
+            fetch(trendingURL, { offset: 0 });
+        }
+        else {
+            fetch(searchUrl, { offset: 0, query: param.q })
+        }
+    }, [param])
+
+    React.useEffect(() => {
+        setDivH(Math.max(...Object.values(gridRef.height)));
+    }, [gridRef.height])
+
+    React.useEffect(() => {
+        if (isBottom)
+            param.q === 'undefined'
+                ? refetch(trendingURL, { offset: ++ref.current.offset })
+                : refetch(searchUrl, { query: param.q, offset: ++ref.current.offset })
+    }, [isBottom])
+
+    return (
+        <section className='trendgrid' style={{ height: divH + "px" }}>
+
+            {data !== null ? data.map((sData, index) => {
+                return sData.data.map((src, index) => {
+                    let oldheight = getgridDetails(gridRef, src, index)
+                    return (
+                        <SingleGif key={index} src={src} height={oldheight} width={gridRef.width} index={index} />
+                    )
+                })
+            }) : <>de</>}
+
+            {loading && <div style={{
+                transform: `translate(${gridRef.width}px,${divH}px)`,
+                position: "absolute",
+            }}>
+                <GLoader />
+            </div>}
         </section>
     )
 }

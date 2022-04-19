@@ -7,11 +7,12 @@ import "./styles/main.scss";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <Navbar />
       <SeachBar />
       <Routes>
         <Route path="/" element={<TrendingGrid />} />
+        <Route path="/:q" element={<TrendingGrid />} />
       </Routes>
     </div>
   );

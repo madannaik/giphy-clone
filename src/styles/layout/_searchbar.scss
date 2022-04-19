@@ -22,6 +22,8 @@
     }
   }
   &__icon {
+    z-index: 6;
+    cursor: pointer;
     height: 103%;
     width: 3rem;
     place-items: center;
