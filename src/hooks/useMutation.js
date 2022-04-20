@@ -8,12 +8,12 @@ export const useMutation = (query) => {
         loading: false,
         error: false,
     });
-    const refetch = async (url, variables) => {
+    const getNextpage = async (url, variables) => {
         try {
             setState({ data: state.data, loading: true, error: false });
 
             const { data: resdata } = await axios.get(url(variables))
-
+            console.log(resdata);
             setState((prevData) => {
                 return {
                     data: [
@@ -28,7 +28,7 @@ export const useMutation = (query) => {
             })
         } catch {
             setState({
-                data: undefined,
+                data: null,
                 loading: false,
                 error: true,
             })
@@ -52,11 +52,11 @@ export const useMutation = (query) => {
 
         } catch {
             setState({
-                data: undefined,
+                data: null,
                 loading: false,
                 error: true,
             })
         }
     };
-    return { ...state, fetch, refetch };
+    return { ...state, fetch, getNextpage };
 };

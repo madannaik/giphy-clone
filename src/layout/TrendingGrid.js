@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { Error } from '../components/Error'
 import { GLoader } from '../components/GLoader'
 import { SingleGif } from '../components/SingleGif'
 import { useMutation } from '../hooks/useMutation'
@@ -19,7 +20,7 @@ export const TrendingGrid = () => {
         height: { 0: 0, 1: 0, 2: 0, 3: 0 }
     }
 
-    const { data, fetch, loading, refetch } = useMutation()
+    const { data, fetch, loading, error, getNextpage } = useMutation()
 
     React.useEffect(() => {
         ref.current.offset = 0;
@@ -45,30 +46,29 @@ export const TrendingGrid = () => {
     }, [gridRef.height])
 
     React.useEffect(() => {
-        if (isBottom)
+        if (isBottom) {
+            ref.current.offset += 50;
             param.q === 'undefined'
-                ? refetch(trendingURL, { offset: ++ref.current.offset })
-                : refetch(searchUrl, { query: param.q, offset: ++ref.current.offset })
+                ? getNextpage(trendingURL, { offset: ref.current.offset })
+                : getNextpage(searchUrl, { query: param.q, offset: ref.current.offset })
+
+        }
+
     }, [isBottom])
 
     return (
         <section className='trendgrid' style={{ height: divH + "px" }}>
-
             {data !== null ? data.map((sData, index) => {
                 return sData.data.map((src, index) => {
-                    let oldheight = getgridDetails(gridRef, src, index)
                     return (
-                        <SingleGif key={index} src={src} height={oldheight} width={gridRef.width} index={index} />
+                        <SingleGif key={index} src={src} height={getgridDetails(gridRef, src, index)} width={gridRef.width} index={index} />
                     )
                 })
-            }) : <>de</>}
-
-            {loading && <div style={{
-                transform: `translate(${gridRef.width}px,${divH}px)`,
-                position: "absolute",
-            }}>
-                <GLoader />
+            }) : <div>
+                No stickers
             </div>}
+            <GLoader loading={loading} divH={divH} />
+            <Error Error={error} divH={divH} />
         </section>
     )
 }

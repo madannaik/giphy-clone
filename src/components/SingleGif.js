@@ -3,12 +3,14 @@ import { randomColor } from '../utils/getRandomColors'
 
 export const SingleGif = ({ src, index, width, height }) => {
     const [color, setColor] = useState()
+
     React.useEffect(() => {
         setColor(randomColor())
-    }, [])
 
+    }, [])
+    console.log(width);
     const style = {
-        width: '248px',
+        width: 248 + 'px',
         height: src.images['480w_still'].height > 400 ? "400px" : src.images['480w_still'].height + "px",
         transform: `translate(${width}px,${height}px)`,
         position: "absolute",

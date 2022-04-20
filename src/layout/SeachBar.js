@@ -8,13 +8,18 @@ export const SeachBar = () => {
         setInput(e.target.value);
     }
     const onClick = () => {
+
         if (input !== '') {
             navigate(`/${input}`)
         }
         else navigate('/')
     }
+    const onSubmit = (e) => {
+        e.preventdefault();
+        onClick()
+    }
     return (
-        <form className='search'>
+        <form className='search' onSubmit={onSubmit}>
             <input onChange={onChange} value={input} placeholder=' ' type="text" className="search__input" />
             <div className='search__icon' onClick={onClick}>
                 <img src="https://giphy.com/static/img/search-icon.svg" alt="" srcSet="" />

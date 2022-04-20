@@ -7,13 +7,10 @@ export const useScroll = () => {
 
     const handleScroll = () => {
         const position = window.scrollY;
-
-
         if (document.documentElement.offsetHeight === Math.round(position + document.documentElement.clientHeight)) {
             setIsBottom(true)
         }
         else setIsBottom(false);
-
     };
 
     useEffect(() => {

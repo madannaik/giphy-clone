@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import { GLoader } from "./components/GLoader";
 import Navbar from "./layout/Navbar";
 import { SeachBar } from "./layout/SeachBar";
 import { TrendingGrid } from "./layout/TrendingGrid";
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<TrendingGrid />} />
         <Route path="/:q" element={<TrendingGrid />} />
+        <Route path="/load" element={<GLoader />} />
       </Routes>
     </div>
   );

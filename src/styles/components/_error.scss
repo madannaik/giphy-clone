@@ -1,0 +1,15 @@
+.error {
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+
+  &__desc {
+    color: white;
+    font-weight: 600;
+    span {
+      cursor: pointer;
+      font-weight: 700;
+      color: $col-4;
+    }
+  }
+}

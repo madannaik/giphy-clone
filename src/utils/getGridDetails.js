@@ -1,11 +1,27 @@
 export const getgridDetails = (gridRef, src, index) => {
 
     // check for number of rows
-    let num = (index % 4)
-    num === 0 ? gridRef.width = 0 : gridRef.width += 264
+    let clientWidth = document.documentElement.clientWidth;
+    let { rows, width } = getRows(clientWidth)
+    gridRef.current.calcHeight = width;
+    let num = (index % rows)
+    num === 0 ? gridRef.width = 0 : gridRef.width += width;
     let oldheight = gridRef.height[num];
     gridRef.height[num] +=
         parseInt(src.images['480w_still'].height) >= 400 ? 400 + 20 :
             parseInt(src.images['480w_still'].height) + 20;
     return oldheight;
 }
+
+const getRows = (width) => {
+    if (width < 600) {
+        return { rows: 2, width: width / 2 };
+    }
+    else if (width > 600 && width < 1040) {
+        return { rows: 3, width: width / 3 };
+
+    }
+    else if (width > 1040) {
+        return { rows: 4, width: 264 };;
+    }
+} 
