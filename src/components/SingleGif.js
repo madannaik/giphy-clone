@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { randomColor } from '../utils/getRandomColors'
+import { randomColor } from '../helpers/getRandomColors'
 
 export const SingleGif = ({ src, index, width, height, calcHeight }) => {
     const [color, setColor] = useState()

@@ -6,8 +6,8 @@ import { GLoader } from '../components/GLoader'
 import { SingleGif } from '../components/SingleGif'
 import { useMutation } from '../hooks/useMutation'
 import { useScroll } from '../hooks/useScroll'
-import { getgridDetails } from '../utils/getGridDetails'
-import { searchUrl } from '../utils/url.js'
+import { getgridDetails } from '../helpers/getGridDetails'
+import { searchUrl } from '../helpers/url'
 
 export const SearchPage = () => {
 
@@ -24,6 +24,7 @@ export const SearchPage = () => {
     const { data, loading, error, getNextpage } = useMutation(searchUrl({ query: loc.state }))
 
     useEffect(() => {
+        console.log(gridRef);
         setDivH(Math.max(...Object.values(gridRef.height)));
     }, [gridRef.height])
 

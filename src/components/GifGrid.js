@@ -1,5 +1,5 @@
 import React from 'react'
-import { getgridDetails } from '../utils/getGridDetails'
+import { getgridDetails } from '../heplers/getGridDetails'
 import { GLoader } from './GLoader'
 import { SingleGif } from './SingleGif'
 

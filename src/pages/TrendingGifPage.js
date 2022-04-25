@@ -5,8 +5,8 @@ import { GLoader } from '../components/GLoader'
 import { SingleGif } from '../components/SingleGif'
 import { useMutation } from '../hooks/useMutation'
 import { useScroll } from '../hooks/useScroll'
-import { getgridDetails } from '../utils/getGridDetails'
-import { trendingURL } from '../utils/url.js'
+import { getgridDetails } from '../helpers/getGridDetails'
+import { trendingURL } from '../helpers/url.js'
 
 export const TrendingGridPage = () => {
 

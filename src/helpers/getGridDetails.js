@@ -20,7 +20,10 @@ const getRows = (width) => {
     else if (width > 600 && width < 1040) {
         return { rows: 3, width: (width / 3) - 12 };
     }
-    else if (width > 1040) {
-        return { rows: 4, width: 248 };;
+    else if (width > 1040 && width < 1440) {
+        return { rows: 4, width: 248 };
+    }
+    else if (width >= 1440) {
+        return { rows: 4, width: 298 };
     }
 } 
