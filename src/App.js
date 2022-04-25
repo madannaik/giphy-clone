@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { GLoader } from "./components/GLoader";
 import Navbar from "./layout/Navbar";
 import { SeachBar } from "./layout/SeachBar";
-import { TrendingGrid } from "./layout/TrendingGrid";
+import { SearchPage } from "./pages/SearchPage";
+import { TrendingGridPage } from "./pages/TrendingGifPage";
 import "./styles/main.scss";
 
 function App() {
@@ -11,10 +11,9 @@ function App() {
     <div className="App" >
       <Navbar />
       <SeachBar />
-      <Routes>
-        <Route path="/" element={<TrendingGrid />} />
-        <Route path="/:q" element={<TrendingGrid />} />
-        <Route path="/load" element={<GLoader />} />
+      <Routes >
+        <Route path="/" element={<TrendingGridPage />} />
+        <Route path="search/" element={<SearchPage />} />
       </Routes>
     </div>
   );

@@ -1,12 +1,10 @@
 import React from 'react'
 
 export const GLoader = ({ loading, divH }) => {
+
     return (
         loading ? (<div style={{
             top: divH + "px",
-            left: "50%",
-            transform: "transalteX(-50%)",
-            position: "absolute",
         }}>
             <div className='gloader'>
                 <div className="gloader__1 gloader__itm"></div>

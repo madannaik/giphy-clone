@@ -17,7 +17,8 @@ export const TrendingGrid = () => {
     const ref = useRef({ offset: 0 })
     const gridRef = {
         width: 0,
-        height: { 0: 0, 1: 0, 2: 0, 3: 0 }
+        height: { 0: 0, 1: 0, 2: 0, 3: 0 },
+        calcHeight: 0,
     }
 
     const { data, fetch, loading, error, getNextpage } = useMutation()
@@ -51,9 +52,7 @@ export const TrendingGrid = () => {
             param.q === 'undefined'
                 ? getNextpage(trendingURL, { offset: ref.current.offset })
                 : getNextpage(searchUrl, { query: param.q, offset: ref.current.offset })
-
         }
-
     }, [isBottom])
 
     return (
@@ -61,14 +60,14 @@ export const TrendingGrid = () => {
             {data !== null ? data.map((sData, index) => {
                 return sData.data.map((src, index) => {
                     return (
-                        <SingleGif key={index} src={src} height={getgridDetails(gridRef, src, index)} width={gridRef.width} index={index} />
+                        <SingleGif key={index} src={src} height={getgridDetails(gridRef, src, index)} calcHeight={gridRef.calcHeight} width={gridRef.width} index={index} />
                     )
                 })
             }) : <div>
                 No stickers
             </div>}
             <GLoader loading={loading} divH={divH} />
-            <Error Error={error} divH={divH} />
+            <Error error={error} divH={divH} />
         </section>
     )
 }

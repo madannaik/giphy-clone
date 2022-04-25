@@ -2,12 +2,14 @@
   height: 10rem;
   width: 1040px;
   color: white;
-  bottom: 0;
   display: flex;
   flex-direction: row;
   gap: 1rem;
   margin-top: 2rem;
-  // margin: auto 0;
+  // top: 0;
+  left: 50%;
+  transform: translateX(-5%);
+  position: absolute;
 
   &__itm {
     width: 10px;
@@ -44,96 +46,5 @@
   }
   100% {
     transform: translateY(0px);
-  }
-  // 0% {
-  //   transform: translateY(0px);
-  // }
-  // 10% {
-  //   transform: translateY(-5px);
-  // }
-  // 20% {
-  //   transform: translateY(-10px);
-  // }
-  // 30% {
-  //   transform: translateY(-15px);
-  // }
-  // 40% {
-  //   transform: translateY(-20px);
-  // }
-  // 50% {
-  //   transform: translateY(-15px);
-  // }
-  // 60% {
-  //   transform: translateY(-10px);
-  // }
-  // 70% {
-  //   transform: translateY(-5px);
-  // }
-  // 80% {
-  //   transform: translateY(-2px);
-  // }
-  // 90% {
-  //   transform: translateY(-1px);
-  // }
-  // 100% {
-  //   transform: translateY(0px);
-  // }
-}
-@keyframes motion-2 {
-  0% {
-  }
-  20% {
-  }
-  40% {
-  }
-  60% {
-  }
-  80% {
-  }
-  100% {
-  }
-}
-@keyframes motion-3 {
-  0% {
-  }
-  20% {
-  }
-  40% {
-  }
-  60% {
-  }
-  80% {
-  }
-  100% {
-  }
-}
-
-@keyframes motion-4 {
-  0% {
-  }
-  20% {
-  }
-  40% {
-  }
-  60% {
-  }
-  80% {
-  }
-  100% {
-  }
-}
-
-@keyframes motion-5 {
-  0% {
-  }
-  20% {
-  }
-  40% {
-  }
-  60% {
-  }
-  80% {
-  }
-  100% {
   }
 }

@@ -1,16 +1,20 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const SeachBar = () => {
     let navigate = useNavigate();
+    const loc = useLocation()
     const [input, setInput] = React.useState('');
     const onChange = (e) => {
         setInput(e.target.value);
     }
     const onClick = () => {
-
-        if (input !== '') {
-            navigate(`/${input}`)
+        if (loc.pathname === '/search') {
+            navigate(`/search`, { state: input, replace: true });
+            window.location.reload();
+        }
+        else if (input !== '') {
+            navigate(`/search`, { state: input, replace: true })
         }
         else navigate('/')
     }
